@@ -1,0 +1,92 @@
+// Partials //
+@import "vars";
+@import "footer";
+
+//Maps//
+$colores:(
+    color1:white,
+    color2:black,
+);
+
+// Mixins //
+@mixin bg--color($bgc, $font) {
+    background-color: $bgc;
+    height: auto;
+    width: 100%;
+    font-family: $font;
+    text-align: center;
+    padding-bottom: 5%;
+}
+@mixin bg--foto {
+    background-size: cover;
+    height: 25%;
+    width: 50%;
+}
+
+/* Estilos de: Home */    
+.header {
+    font-family: $font1;
+}
+.section1 {
+    background-image: url(../img/pelota_arco.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 80vh;
+    text-align: center;
+    color: map-get($colores, color1);
+    font-size: 200%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    &--titulo {
+        font-family: $font2;
+    }
+    &--slogan {
+        font-family: $font3;
+    }
+}
+.section2 {
+    @include bg--color(grey, $font1);
+    padding: 1,5rem;
+    color: map-get($colores, color1);
+    display: flex;
+    flex-flow:column;
+    &__titulo {
+        text-align: center;
+        font-size: 1,5rem;
+        font-family: $font1;
+        margin: 3rem;
+    }
+    &__fotos {
+        width: 80%;
+    }
+    &__wsp {
+        background-color: rgb(110, 197, 107);
+        padding: 10px;
+        text-decoration: $textLink;
+        border-radius: 10px;
+        color: map-get($colores, color1);
+    }
+}
+
+/* Estilos de: Productos */
+.section3 {
+    @include bg--color(grey,$font1);
+    color: map-get($colores, color1);
+    &__titulo1 {
+        font-family: $font4;
+        font-size: 220%;
+        padding-top: 2%;
+    }
+    &__titulo2 {
+        font-size: 125%;
+        padding-top: 5%;
+    }
+    &__fotos {
+        width: 25vw;
+        min-width: 125px;
+        margin: 5%;
+    }
+}
